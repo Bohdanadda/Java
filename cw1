@@ -1,0 +1,151 @@
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args) {
+        //zad 1
+        /*Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj pierwsza liczbe ");
+        double liczba1 = scanner.nextDouble();
+        System.out.println("podaj druge liczbe");
+        double liczba2 = scanner.nextDouble();
+        System.out.println("Wynik dodawania to:"+(liczba1+liczba2));
+        System.out.println("Wynik dodawania to:"+(liczba1-liczba2));
+        System.out.println("Wynik dodawania to:"+(liczba1*liczba2));
+        System.out.println("Wynik dodawania to:"+(liczba1/liczba2));
+
+        String strl = scanner.next();*/
+
+        //zad 2
+        /*
+        Scanner scanner1 = new Scanner(System.in);
+        System.out.print("Podaj pierwsy łańcuch znaków: ");
+        int string1 = scanner1.nextInt();
+        System.out.print("Podaj drugi łańcuch znaków: ");
+        int string2 = scanner1.nextInt();
+        System.out.print("Podaj trzeci łańcuch znaków: ");
+        int string3 = scanner1.nextInt();
+        System.out.print("Podaj czwarty łańcuch znaków: ");
+        int  string4 = scanner1.nextInt();
+        double wynik = (string1+string2+string3+string4);
+        double wynik2 = (wynik/4);
+        System.out.println(wynik2);
+
+         */
+
+        //zad 3
+        /*
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Podaj pierwasza liczbe wymiarna");
+        double liczba1 = scanner.nextDouble();
+
+        System.out.print("Podaj drugą liczbe wymiarna");
+        double liczba2 = scanner.nextDouble();
+
+        System.out.print("Podaj trzecią liczbe wymiarna");
+        double liczba3 = scanner.nextDouble();
+
+        System.out.print("Podaj czwarte liczbe wymiarna");
+        double liczba4 = scanner.nextDouble();
+
+        double suma = liczba1 + liczba2 +liczba3 + liczba4;
+
+        System.out.println("suma podanych liczb to:" +suma);
+        */
+        //zad 4
+        /*
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj numer dnia tygonia:");
+        int numerdnia = scanner.nextInt();
+        switch (numerdnia) {
+            case 1 :
+                System.out.println("Ponidziałek");
+                break;
+            case 2:
+                System.out.println("Wtorek");
+                break;
+            case 3:
+                System.out.println("Środa");
+                break;
+            default:
+                System.out.println("Zły dzień tygodnia");
+        }
+
+         */
+
+        //zad 7
+        /*
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("podaj rok do sprawdzenia:");
+
+        int rok = scanner.nextInt();
+        boolean jestPrzestepny = false;
+
+        if ((rok % 4 == 0 && rok % 100 != 0)||(rok % 400 == 0))
+        {
+            jestPrzestepny = true;
+        }
+
+        if (jestPrzestepny)
+        {
+            System.out.println(rok + " to rok przestępny.");
+        }
+        else
+        {
+            System.out.println(rok + " nie jest rokiem przestępnym.");
+        }
+
+         */
+        // zad14
+        /*
+        Scanner scanner = new Scanner(System.in);
+
+        int suma = 0;
+
+        while (suma <= 100)
+        {
+            System.out.print("podaj liczbe calkowita");
+            int liczba = scanner.nextInt();
+            suma += liczba;
+        }
+        System.out.println("Suma przekroczyła 100 . koniec programu.");
+
+         */
+
+        //zad 13
+        /*
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Podaj liczbe do sprawdzenia");
+        int liczba = scanner.nextInt();
+
+        boolean czyArmstrong = czyLiczbaArmstronga(liczba);
+        if (czyArmstrong)
+        {
+            System.out.println(liczba + "jest liczbą Aemstronga");
+        }
+        else
+        {
+            System.out.println(liczba + "nie jest liczbą Aemstronga");
+        }
+    }
+    public static boolean czyLiczbaArmstronga(int liczba)
+    {
+        int oryginalnaLiczba =liczba;
+        int sumaPoteg = 0;
+        int iloscCyfr = String.valueOf(liczba).length();
+
+        while (liczba !=0)
+        {
+            int cyfra = liczba % 10;
+            sumaPoteg += Math.pow(cyfra,iloscCyfr);
+            liczba /=10;
+        }
+        return sumaPoteg == oryginalnaLiczba;
+    }
+    
+         */
+        
+    }
+}
