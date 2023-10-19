@@ -1,114 +1,81 @@
-import java.util.*;
-
 public class Main {
-    public static Random random = new Random();
-
     public static void main(String[] args) {
 
-        System.out.println(generateRandomDouble());
-        int[] tab = {1,2,3,4,5};
-        System.out.println(Arrays.stream(tab).min());
-        piramida();
-        MinMax();
-        zmiana();
-        sume();
+        House domStefana = new House();
+        domStefana.garage = true;
+        domStefana.floors = 2;
+        domStefana.rooms = 6;
+        domStefana.area = 150;
+        domStefana.garden = false;
 
+        System.out.println(domStefana.getValue());
+
+        House domSelwii = new House();
+        domSelwii.garage = true;
+        domSelwii.garden = false;
+        domSelwii.area = 175;
+        domSelwii.rooms = 4;
+        domSelwii.floors = 2;
+
+        System.out.println(domSelwii.getValue());
+
+
+        //zad2
+        Dog myDog = new Dog("Burek","Retriwer",3);
+        myDog.bark();
+
+        //zad3
+        Car myCar = new Car("Porshe","911");
+        myCar.acelerate(400);
+        System.out.println("Current speed:"+ myCar.getSpeed());
+        myCar.dacelerate(100);
+        System.out.println("Current speed"+ myCar.getSpeed());
+
+        //zad4
+        Time currentTime = new Time(10,30);
+        Time additionalTime = new Time(2,45);
+
+        Time newTime = currentTime.addTime(additionalTime);
+        System.out.println("Current time:" + currentTime);
+        System.out.println("Additional Time:" + additionalTime);
+        System.out.println("New Time"+newTime);
+
+        //zad5
+        //1)
+        Człowiek osoba1 = new Człowiek("Jan");
+        osoba1.przedstawSie(osoba1.imie);
+
+        //2)
+        Człowiek osoba2 = new Człowiek("Anna");
+        osoba1.dowiedzCzesc(osoba2);
+
+        //3)
+        Człowiek osoba3 = new Człowiek("Jan");
+        osoba3.zmienImie("Karl");
+        osoba3.przedstawSie(osoba3.imie);
+
+        //4)
+        osoba1.zamianImionami(osoba2);
+        osoba1.przedstawSie(osoba1.imie);
+        osoba2.zamianImionami(osoba2);
+
+        //zad5
+        //1)
+        Licznik licznik = new Licznik();
+        int zmienna = 5;
+
+        licznik.zwieksz(zmienna);
+        System.out.println("Wartosc licznika po zwiekszeniu:"+licznik.liczba);
+
+        //2)
+        Licznik licznik1 = new Licznik();
+        licznik1.liczba = 10;
+
+        Licznik licznik2 = new Licznik();
+        licznik2.liczba =  5;
+
+        licznik1.dodaj(licznik2);
+        System.out.println("Wartość ");
     }
-    public static int generateRandomInt()
-    {
-        return random.nextInt();
-    }
-    //zad2
-    public static double generateRandomDouble()
-    {
-        return random.nextDouble(15,20);
-    }
-    //zad3
-    public static void tab()
-    {
-        double randomDouble = generateRandomDouble();
-        System.out.println("Losowa liczba zmiennoprzecinkowa" + randomDouble);
-    }
-    //zad4
-
-    //zad 5
-    public static void piramida()
-    {
-        Scanner scanner= new Scanner(System.in);
-        System.out.println("Podaj znak");
-        String znak = scanner.next();
-        System.out.println("Podaj wysokość");
-        int wysokosc = scanner.nextInt();
-
-        for(int i =0;i<wysokosc; i++)
-        {
-            int liczbaspacji = wysokosc - i - 1;
-            int liczbaznakow = 2*i+1;
-            StringBuilder sb = new StringBuilder();
-            while (liczbaspacji-- > 0)
-                sb.append(' ');
-            while (liczbaznakow-- > 0)
-                sb.append(znak);
-            System.out.println(sb.toString());
-
-        }
-
-    }
-    //zad6
-    public static void  MinMax()
-    {
-        int[] tab=new int[15];
-        for(int i=0;i<15;i++)
-        {
-            tab[i]=random.nextInt(1,100);
-        }
-        System.out.println(Arrays.stream(tab).min().getAsInt());
-        System.out.println(Arrays.stream(tab).max().getAsInt());
-    }
-    //zad9
-    public static void zmiana()
-    {
-        String input = "bananowy";
-        StringBuilder result = new StringBuilder();
-
-        for (int i = 0; i<input.length();i++)
-        {
-            char currentChar = input.charAt(i);
-            if(result.indexOf(String.valueOf(currentChar))== -1)
-            {
-                result.append(currentChar);
-            }
-        }
-        System.out.println("Napis bez powtórzeń:"+ result.toString());
-    }
-    //zad10
-
-    //zad11
-
-    //zad12
-
-    public static void sume()
-    {
-        ArrayList<Double> numbers = new ArrayList<>();
-        Scanner scanner= new Scanner(System.in);
-
-        System.out.println("Podaj 10 liczb ");
-
-        for (int i =0; i <10; i++)
-        {
-            System.out.print("liczba"+(i+1)+"i");
-            double num = scanner.nextDouble();
-            numbers.add(num);
-        }
-
-        double sum = 0.0;
-        for (Double number: numbers)
-        {
-            sum += number;
-        }
-        System.out.println("Suma wszystkich liczb:"+ sum);
-    }
-
-    //zad13
-
 }
+
