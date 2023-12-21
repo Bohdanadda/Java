@@ -1,81 +1,90 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        /*Koncert koncert = new Koncert();
+        LotMiedzynarodowy lotMiedzynarodowy = new LotMiedzynarodowy();
+        BramkaNaAutostradzie bramka = new BramkaNaAutostradzie();
+        koncert.wystaw;
+        lotMiedzynarodowy.wystawBilet();
+        bramka.wystawBilet();
+         */
 
-        House domStefana = new House();
-        domStefana.garage = true;
-        domStefana.floors = 2;
-        domStefana.rooms = 6;
-        domStefana.area = 150;
-        domStefana.garden = false;
-
-        System.out.println(domStefana.getValue());
-
-        House domSelwii = new House();
-        domSelwii.garage = true;
-        domSelwii.garden = false;
-        domSelwii.area = 175;
-        domSelwii.rooms = 4;
-        domSelwii.floors = 2;
-
-        System.out.println(domSelwii.getValue());
+        KierownikWycieczki kierownik = new KierownikWycieczki(new Koncert());
+        kierownik.oganijBilet();
+        kierownik = new KierownikWycieczki(new LotMiedzynarodowy());
+        kierownik.oganijBilet();
+        kierownik = new KierownikWycieczki(new BramkaNaAutostradzie());
+        kierownik.oganijBilet();
 
 
-        //zad2
-        Dog myDog = new Dog("Burek","Retriwer",3);
-        myDog.bark();
+        StandardowyPrinter mojPrintre = new StandardowyPrinter();
+        Biuro biuro = new Biuro(mojPrintre);
+        biuro.drukujDokument("");
 
-        //zad3
-        Car myCar = new Car("Porshe","911");
-        myCar.acelerate(400);
-        System.out.println("Current speed:"+ myCar.getSpeed());
-        myCar.dacelerate(100);
-        System.out.println("Current speed"+ myCar.getSpeed());
+        BenzynowySilnik sylnik = new BenzynowySilnik();
+        Samochud samochud = new Samochud(sylnik);
+        samochud.start();
+        samochud.stop();
 
-        //zad4
-        Time currentTime = new Time(10,30);
-        Time additionalTime = new Time(2,45);
+        Email email = new Email();
+        Uzytkownik uzytkownik = new Uzytkownik(email);
+        uzytkownik.powiadoOModernizacji("");
+        /*
+       int[] agesToChek = {25,16,20};
+       for(int age : agesToChek)
+       {
+           try {
+               checkAge(age);
+               System.out.println("Wiek " + age + " jest poprawny");
+           }
+           catch (IllegalArgumentException e)
+           {
+               System.out.println("Wyjatek zlapano" + e.getMessage());
+           } catch (IllegalAccessException e) {
+               System.out.println("Wijatek" + e.getMessage());
+           }
+       }
 
-        Time newTime = currentTime.addTime(additionalTime);
-        System.out.println("Current time:" + currentTime);
-        System.out.println("Additional Time:" + additionalTime);
-        System.out.println("New Time"+newTime);
+         */
 
-        //zad5
-        //1)
-        Człowiek osoba1 = new Człowiek("Jan");
-        osoba1.przedstawSie(osoba1.imie);
+       Scanner scanner = new Scanner(System.in);
+       while (true)
+       {
+           try {
+               System.out.println("Wprowadz 1 liczbe: ");
+               int liczba1 = Integer.parseInt(scanner.nextLine());
+               System.out.println("Wprowadz 2 liczbe: ");
+               int liczba2 = Integer.parseInt(scanner.nextLine());
 
-        //2)
-        Człowiek osoba2 = new Człowiek("Anna");
-        osoba1.dowiedzCzesc(osoba2);
+               if(liczba2 == 0)
+               {
+                   throw new ArithmeticException(" Nie mozna dzielicz przes 0.");
+               }
+               int wynik = liczba1 / liczba2;
+               System.out.println("Dzielenia:" + wynik);
+               break;
+           }
+           catch (NumberFormatException e)
+           {
+               System.out.println("Blad");
+           }
+           catch (ArithmeticException e)
+           {
+               System.out.println("Blad retmetyczny" + e.getMessage());
+           }
+       }
 
-        //3)
-        Człowiek osoba3 = new Człowiek("Jan");
-        osoba3.zmienImie("Karl");
-        osoba3.przedstawSie(osoba3.imie);
 
-        //4)
-        osoba1.zamianImionami(osoba2);
-        osoba1.przedstawSie(osoba1.imie);
-        osoba2.zamianImionami(osoba2);
-
-        //zad5
-        //1)
-        Licznik licznik = new Licznik();
-        int zmienna = 5;
-
-        licznik.zwieksz(zmienna);
-        System.out.println("Wartosc licznika po zwiekszeniu:"+licznik.liczba);
-
-        //2)
-        Licznik licznik1 = new Licznik();
-        licznik1.liczba = 10;
-
-        Licznik licznik2 = new Licznik();
-        licznik2.liczba =  5;
-
-        licznik1.dodaj(licznik2);
-        System.out.println("Wartość ");
+       String testowyEmail = ("niepoprawny adres");
+        try
+        {
+            sprawdzFormatDanych(testowyEmail);
+            System.out.println("jest poprawny");
+        }
+        catch (NiepoprawnyFormatDanychException e)
+        {
+            System.out.println("Wyjatek" + e.getMessage());
+        }
     }
 }
-
